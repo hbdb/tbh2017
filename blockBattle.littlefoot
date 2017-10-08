@@ -101,9 +101,11 @@ void handleMessage (int param1, int param2, int param3)
     log(param1);
     log(param2);
     log(param3);
-    log(myZyankenID);
     
-    if(myZyankenID == ROCK_ID)
+    int current = getJankenHand();
+    log(current);
+    
+    if(current == ROCK_ID)
     {
         if(param2 == PAPER_ID)
         {
@@ -118,7 +120,7 @@ void handleMessage (int param1, int param2, int param3)
             draw();
         }
     } 
-    else if(myZyankenID == SCISSORS_ID)
+    else if(current == SCISSORS_ID)
     {
         if(param2 == PAPER_ID)
         {
@@ -133,7 +135,7 @@ void handleMessage (int param1, int param2, int param3)
             lose();
         }
     }
-    else //if(myZyankenID = PAPER_ID)
+    else //if(current = PAPER_ID)
     {
         if(param2 == PAPER_ID)
         {
